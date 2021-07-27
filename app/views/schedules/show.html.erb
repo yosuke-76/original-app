@@ -1,0 +1,18 @@
+<p id="notice"><%= Schedule %></p>
+
+<p>
+  <strong>タイトル</strong>
+  <%= @schedule.title %>
+</p>
+
+<p>
+  <strong>時間</strong>
+  <strong>開始</strong><%= @schedule.start_time.strftime("%Y-%m-%d %H:%M") %>
+  <strong>終了</strong><%= @schedule.end_time.strftime("%Y-%m-%d %H:%M") %>
+
+<p>
+  <strong>内容</strong>
+  <%= @schedule.content %>
+</p>
+
+<%= link_to "top page", root_path %>
