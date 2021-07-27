@@ -5,7 +5,7 @@ class SchedulesController < ApplicationController
   end
 
   def new
-    @Schedule = Schedule.new
+    @schedule = Schedule.new
   end
 
   def create
@@ -21,10 +21,22 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
   end
 
+  def edit
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def update
+    @schedule = Schedule.find(params[:id])
+    if @schedule.update(schedule_params)
+      redirect_to schedule_path
+    else
+      render :edit
+    end
+  end
 
 
   private
   def schedule_params
-    params.permit(:title, :content, :start_time, :end_time).merge(user_id: current_user.id)
+    params.require(:schedule).permit(:title, :content, :start_time, :end_time).merge(user_id: current_user.id)
   end
 end
