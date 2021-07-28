@@ -1,0 +1,47 @@
+.body-schedule {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-size: 300%;
+  margin: auto, 0;
+}
+.main-schedule {
+  width: 70%;
+  border: 1px #111111 solid;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.textitem {
+  text-align: left;
+  width: 30%;
+  height: 30%;
+  font-size: 20px;
+}
+.textform {
+  display: flex;
+  width: auto;
+  margin: 30px;
+}
+.textbox {
+  width: 40%;
+}
+.submitform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.submitarea {
+  width: 80%;
+  border: none;
+  font-size: xx-large;
+  color: white;
+  background-color: cyan;
+  margin: 5px;
+}
