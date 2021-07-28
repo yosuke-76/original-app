@@ -1,0 +1,39 @@
+.top-page-header {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  border: 1px, solid;
+}
+.search-bar-contents {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.original-icon {
+  font-size:xx-large;
+  text-decoration: none;
+  color: black;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: auto;
+}
+
+.lists-right {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  list-style: none;
+  margin-left: auto;
+}
+.user-nickname {
+  margin: auto;
+  padding: 5px;
+}
+.logout {
+  padding: 5px;
+}

@@ -1,0 +1,27 @@
+<div class="body-schedule">
+  <h1>新規作成フォーム</h1>
+  <div class="main-schedule">
+    <%= form_with(model: @schedule, local: true) do |f|%>
+      <%= render 'shared/errors', model: f.object %>
+      <div class="textform">
+        <%= f.label :"タイトル", class: 'textitem' %>
+        <%= f.text_field :title, placeholder: "タイトル", class: 'textbox' %>
+      </div>
+      <div class="textform">
+        <%= f.label :"開始時間", class: 'textitem' %>
+        <%= f.datetime_select :start_time, claaa: 'textbox' %>
+      </div>
+      <div class="textform">
+        <%= f.label :"終了時間", class: 'textitem' %>
+        <%= f.datetime_select :end_time,　class: 'textbox' %>
+      </div>
+      <div class="textform">
+        <%= f.label :"内容", class: 'textitem' %>
+        <%= f.text_area :content, placeholder: '内容', class: 'textbox' %>
+      </div>
+      <div class="submitform">
+        <%= f.submit"新しく予定を追加する", class: 'submitarea' %>
+      </div>
+    <% end %>
+  </div>
+</div>
