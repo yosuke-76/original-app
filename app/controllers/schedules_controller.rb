@@ -1,7 +1,10 @@
 class SchedulesController < ApplicationController
+  before_action :set_schedule, only: [:show, :edit, :update]
 
   def index
-    @schedules = Schedule.all
+    @schedule = current_user.schedules
+    @schedules = Schedule.all 
+    @p = Schedule.ransack(params[:q])
   end
 
   def new
@@ -18,15 +21,12 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    @schedule = Schedule.find(params[:id])
   end
 
   def edit
-    @schedule = Schedule.find(params[:id])
   end
 
   def update
-    @schedule = Schedule.find(params[:id])
     if @schedule.update(schedule_params)
       redirect_to schedule_path
     else
@@ -40,9 +40,19 @@ class SchedulesController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @p = Schedule.ransack(params[:q])
+    
+    @search_schedules = @p.result.includes(:schedule)
+  end
+
 
   private
   def schedule_params
     params.require(:schedule).permit(:title, :content, :start_time, :end_time).merge(user_id: current_user.id)
+  end
+
+  def set_schedule
+    @schedule = Schedule.find(params[:id])
   end
 end
